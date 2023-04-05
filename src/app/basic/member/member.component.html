@@ -1,0 +1,23 @@
+<!-- tao picker trong trang ts -->
+<div Button (click)="showPicker()">{{ name }}</div>
+
+<!-- tạo picker trên html  -->
+<div class="member-list">
+  <div class="member-list-item" *ngFor="let item of MemberList">
+    <div>{{item.member_id}}</div>
+    <div>{{item.name}}</div>
+    <div>{{item.email}}</div>
+  </div>
+</div>
+
+<List className="my-list">
+  <ListItem Picker [extra]="name2" [arrow]="'horizontal'" [cascade]="false" [data]="seasons" [title]="'选择季节'"
+    [okText]="'ok'" [dismissText]="'cancel'" [(ngModel)]="value2" (ngModelChange)="onOk2($event)">
+    Multiple
+  </ListItem>
+  <ListItem Picker [extra]="name3" [arrow]="'horizontal'" [data]="singleArea" [(ngModel)]="value3"
+    (ngModelChange)="onOk3($event)">
+    Single
+  </ListItem>
+
+</List>

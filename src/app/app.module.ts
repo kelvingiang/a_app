@@ -13,7 +13,8 @@ import { MenuComponent } from './menu/menu.component';
 import { BasicModule } from './basic/basic.module';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent],
+  declarations: [AppComponent, 
+    MenuComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
