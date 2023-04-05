@@ -1,117 +1,98 @@
 import { Injectable } from '@angular/core';
+import { Member } from '../class/member.class';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MemberService {
+ private  members: Member[] = [];
+ private  memberNames: any = [];
+
   constructor() {
+    this.addMember(new Member(1, 'L001','宏發生產線', '123 tran hung dao','gana@yahoo.com', 1));
+    this.addMember(new Member(2, 'L002','保養生產線', '245 nguyen trai','nguyentrai@yahoo.com', 1));
+    this.addMember(new Member(4, 'L004','金塔生產線', '78 nguyen bieu','nguyenbieu@yahoo.com', 0));
+    this.addMember(new Member(6, 'L006','宏發生產線', '62 ly thuong kiet','lythuongkiet@yahoo.com', 1));
+    this.addMember(new Member(5, 'L005','立項生產線', '889 bac hai','bachai@yahoo.com', 1));
+    this.addMember(new Member(3, 'L003','保養生產線', '823 truong son','truongson@yahoo.com', 1));
+
     this.memberName();
   }
-  memberList = [
-    {
-      id: 4,
-      member_id: 'L004',
-      phone: '024464554635',
-      address: '123 tran hung dao',
-      email: 'gana@yahoo.com',
-      name: '宏發生產線',
-      device: [
-        ['CQ03', '設備03', '組04', 0, 1, 1],
-        ['CQ04', '設備04', '組04', 1, 0, 1],
-        ['CQ05', '設備05', '組02', 0, 1, 0],
-        ['CQ07', '設備07', '組03', 1, 0, 1],
-      ],
-      status: 1,
-    },
-    {
-      id: 1,
-      member_id: 'L001',
-      name: '保養生產線',
-      address: '78 tran hung dao',
-      email: 'uuuu@yahoo.com',
-      device: [
-        ['EQ03', '設備03', '組02', 0, 1, 1],
-        ['EQ04', '設備04', '組03', 1, 0, 1],
-        ['EQ05', '設備05', '組02', 0, 1, 0],
-        ['EQ07', '設備07', '組03', 1, 0, 1],
-      ],
-      status: 0,
-    },
-    {
-      id: 2,
-      member_id: 'L002',
-      name: '金塔生產線',
-      address: '45 ly tu trong',
-      email: 'yahaoao@yahoo.com',
-      device: [
-        ['BQ05', '設備05', '組02', 0, 1, 1],
-        ['BQ04', '設備04', '組01', 1, 0, 1],
-        ['BQ08', '設備08', '組01', 0, 1, 0],
-        ['BQ09', '設備09', '組01', 1, 0, 1],
-      ],
-      status: 1,
-    },
-    {
-      id: 3,
-      member_id: 'L006',
-      name: '立項生產線',
-      address: '88 tran ly',
-      email: 'uuiiuiuiii@yahoo.com',
-      device: [
-        ['HQ13', '設備13', '組02', 0, 1, 1],
-        ['HQ08', '設備08', '組03', 1, 0, 1],
-        ['HQ05', '設備05', '組02', 0, 1, 0],
-        ['HQ17', '設備17', '組02', 1, 0, 1],
-      ],
-      status: 0,
-    },
-    {
-      id: 6,
-      member_id: 'L007',
-      name: '宏發生產線',
-      address: '966 ta quang buu',
-      email: '1311dgaaf@yahoo.com',
-      device: [
-        ['CY03', '設備033', '組04', 0, 1, 1],
-        ['CY04', '設備042', '組04', 1, 0, 1],
-        ['CY05', '設備053', '組02', 0, 1, 0],
-        ['CY07', '設備072', '組03', 1, 0, 1],
-      ],
-      status: 1,
-    },
-    {
-      id: 5,
-      member_id: 'L005',
-      name: '保養生產線',
-      address: '232 hoa hung',
-      email: '54546qe22@yahoo.com',
-      device: [
-        ['LQ03', '設備03', '組04', 0, 1, 1],
-        ['LQ04', '設備04', '組04', 1, 0, 1],
-        ['LQ05', '設備05', '組02', 0, 1, 0],
-        ['LQ07', '設備07', '組03', 1, 0, 1],
-        ['LQ09', '設備09', '組03', 1, 0, 0],
-        ['LQ08', '設備08', '組03', 1, 0, 1],
-        ['LQ01', '設備01', '組03', 1, 0, 0],
-      ],
-      status: 1,
-    },
-  ];
 
-  memberNames: any = [];
+  public addMember(member: Member){
+    this.members.push(member);
+  
+    return this.members;
+  }
+
+  public memberList(){
+    return this.members;
+  }
 
   public memberName() {
-    this.memberList.forEach((element) => {
+    this.members.forEach((element) => {
       this.memberNames.push(element.name);
     });
+    return this.memberNames;
   }
 
   public getMemberByName(name: string) {
-    // if(this.productionList.match(name)){
-    // }
-    let obj = this.memberList.filter((item) => item.name == name);
+    // if(this.productionList.match(name)){}
+    let obj = this.members.filter((item) => item.name == name);
     return obj;
   }
-
-
 }
+
+  // memberList = [
+  //   {
+  //     id: 4,
+  //     member_id: 'L004',
+  //     phone: '024464554635',
+  //     address: '123 tran hung dao',
+  //     email: 'gana@yahoo.com',
+  //     name: '宏發生產線',
+  //     status: 1,
+  //   },
+  //   {
+  //     id: 1,
+  //     member_id: 'L001',
+  //     name: '保養生產線',
+  //     address: '78 tran hung dao',
+  //     email: 'uuuu@yahoo.com',
+  //     status: 0,
+  //   },
+  //   {
+  //     id: 2,
+  //     member_id: 'L002',
+  //     name: '金塔生產線',
+  //     address: '45 ly tu trong',
+  //     email: 'yahaoao@yahoo.com',
+  //     status: 1,
+  //   },
+  //   {
+  //     id: 3,
+  //     member_id: 'L006',
+  //     name: '立項生產線',
+  //     address: '88 tran ly',
+  //     email: 'uuiiuiuiii@yahoo.com',
+  //     status: 0,
+  //   },
+  //   {
+  //     id: 6,
+  //     member_id: 'L007',
+  //     name: '宏發生產線',
+  //     address: '966 ta quang buu',
+  //     email: '1311dgaaf@yahoo.com',
+  //     status: 1,
+  //   },
+  //   {
+  //     id: 5,
+  //     member_id: 'L005',
+  //     name: '保養生產線',
+  //     address: '232 hoa hung',
+  //     email: '54546qe22@yahoo.com',
+  //     status: 1,
+  //   },
+  // ];
+
+

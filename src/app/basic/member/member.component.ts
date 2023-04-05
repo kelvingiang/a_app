@@ -69,8 +69,8 @@ export class MemberComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-      (this.MemberList = this._memberService.memberList),
-      (this.selectList = this._memberService.memberNames)
+      (this.MemberList = this._memberService.memberList()),
+      (this.selectList = this._memberService.memberName())
   }
 
   showPicker() {
@@ -90,7 +90,7 @@ export class MemberComponent implements OnInit {
         }
       },
       (cancel) => {
-        this.MemberList = this._memberService.memberList;
+        this.MemberList = this._memberService.memberList();
         this.name = '選擇會員';
       }
     );
