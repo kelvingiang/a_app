@@ -1,0 +1,17 @@
+{
+  "msg": {
+    "hello": " Xin Chào ！",
+    "select_member" : "Chọn Thành Viên"
+  },
+  "basic":{
+    "home" :  "Trang Chủ",
+    "about": "Giới Thiệu",
+    "contact": "Liên Hệ",
+    "member": "Thành Viên"
+  },
+  "btn":{
+    "cancel": "Hủy",
+    "ok": "Xác Nhận",
+    "submit": "Gởi"
+  }
+}

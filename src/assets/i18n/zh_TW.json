@@ -1,0 +1,18 @@
+{
+  "msg": {
+    "hello": "您好!",
+    "select_member" : "選擇會員"
+  },
+
+  "basic": {
+    "home": "首頁",
+    "about": "簡介",
+    "contact": "聯絡",
+    "member": "成員"
+  },
+  "btn": {
+    "cancel": "取消",
+    "ok": "確定",
+    "submit": "發送"
+  }
+}

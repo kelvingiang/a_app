@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PickerService, ToastService } from 'ng-zorro-antd-mobile';
+import { TranslateService } from '@ngx-translate/core';
+import { PickerService, PickerRef } from 'ng-zorro-antd-mobile';
 import { MemberService } from 'src/app/service/member.service';
 
 @Component({
@@ -8,9 +9,10 @@ import { MemberService } from 'src/app/service/member.service';
   styleUrls: ['./member.component.scss'],
 })
 export class MemberComponent implements OnInit {
-  name: string = '選擇會員';
+  name: string = '';
   name2: string = '选择';
-  name3: string = '选择';
+  name3: string = '';
+  search: string = '';
   value: any = [];
   value2: any = [];
   value3: any = [];
@@ -64,37 +66,47 @@ export class MemberComponent implements OnInit {
   ];
 
   constructor(
+    private _translateService: TranslateService,
     private _picker: PickerService,
     private _memberService: MemberService
-  ) {}
+  ) {
+    // this.name3 = this._translateService.instant('msg.select_member');
+  }
 
   ngOnInit() {
       (this.MemberList = this._memberService.memberList()),
-      (this.selectList = this._memberService.memberName())
+      (this.selectList = this._memberService.memberName());
   }
 
   showPicker() {
-    this._picker.showPicker(
+    const ref: PickerRef = this._picker.showPicker(
       {
-        value: [this.value],
+        value: this.value,
         data: this.selectList,
-        okText: 'ok',
-        dismissText: 'cancel',
+        okText: this._translateService.instant('btn.ok'),
+        dismissText: this._translateService.instant('btn.cancel'),
+        title: this._translateService.instant('msg.select_member'),
       },
+
       (result) => {
         if (result.length > 0) {
           this.name = result;
-          this.MemberList =  this._memberService.getMemberByName(result);
+          this.MemberList = this._memberService.getMemberByName(result);
         } else {
           console.log('nho hon khong');
         }
       },
       (cancel) => {
         this.MemberList = this._memberService.memberList();
-        this.name = '選擇會員';
+        this.name = this._translateService.instant('msg.select_member');
       }
     );
   }
+
+  memberOnOk(result: any){
+    this.search = result;
+  }
+
 
   getResult(result: any) {
     this.value = [];
@@ -121,6 +133,35 @@ export class MemberComponent implements OnInit {
   }
 
   onOk3(result: any) {
-    this.name3 = this.getResult(result);
+    this.search = '';
+    this.search = result;
+    console.log(this.search);
+    console.log(result);
   }
+
+  // showPicker() {
+  //   this._picker.showPicker(
+  //     {
+  //       value: [this.value],
+  //       data: this.selectList,
+  //       title: this.name,
+
+  //       //  arrow: [horizontal],
+  //       okText: this._translateService.instant('btn.ok'),
+  //       dismissText: this._translateService.instant('btn.cancel'),
+  //     },
+  //     (result) => {
+  //       if (result.length > 0) {
+  //         this.name = result;
+  //         this.MemberList = this._memberService.getMemberByName(result);
+  //       } else {
+  //         console.log('nho hon khong');
+  //       }
+  //     },
+  //     (cancel) => {
+  //       this.MemberList = this._memberService.memberList();
+  //       this.name = this._translateService.instant('msg.select_member');
+  //     }
+  //   );
+  // }
 }

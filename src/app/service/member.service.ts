@@ -9,7 +9,7 @@ export class MemberService {
  private  memberNames: any = [];
 
   constructor() {
-    this.addMember(new Member(1, 'L001','宏發生產線', '123 tran hung dao','gana@yahoo.com', 1));
+    this.addMember(new Member(1, 'L001','宏發生產線', '123 tran hung dao','gana@yahoo.com',1));
     this.addMember(new Member(2, 'L002','保養生產線', '245 nguyen trai','nguyentrai@yahoo.com', 1));
     this.addMember(new Member(4, 'L004','金塔生產線', '78 nguyen bieu','nguyenbieu@yahoo.com', 0));
     this.addMember(new Member(6, 'L006','宏發生產線', '62 ly thuong kiet','lythuongkiet@yahoo.com', 1));

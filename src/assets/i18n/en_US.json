@@ -1,0 +1,19 @@
+{
+  "msg": {
+    "hello": "How are you ！",
+    "select_member" : "Select Member"
+  },
+  "basic":{
+    "home" :  "Home",
+    "about": "About",
+    "contact": "Contact",
+    "member": "Member"
+  },
+  "btn":{
+    "cancel": "Cancel",
+    "ok": "OK",
+    "submit": "Submit"
+  }
+
+
+}

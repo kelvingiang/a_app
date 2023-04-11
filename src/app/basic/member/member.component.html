@@ -1,5 +1,13 @@
 <!-- tao picker trong trang ts -->
-<div Button (click)="showPicker()">{{ name }}</div>
+<div Button (click)="showPicker()"> {{name !== '' ? name : 'msg.select_member' | translate}} </div>
+
+<ListItem Picker [extra]="search" [arrow]="'horizontal'" [data]="singleArea" okText="{{'btn.ok'| translate}}"
+dismissText="{{'btn.cancel' | translate}}"  [(ngModel)]="search" (ngModelChange)="memberOnOk($event)">
+
+{{'msg.select_member' | translate}}
+</ListItem>
+  
+
 
 <!-- tạo picker trên html  -->
 <div class="member-list">
@@ -10,14 +18,19 @@
   </div>
 </div>
 
+<!-- doan vi du de tham khoa ================================ -->
+
 <List className="my-list">
   <ListItem Picker [extra]="name2" [arrow]="'horizontal'" [cascade]="false" [data]="seasons" [title]="'选择季节'"
     [okText]="'ok'" [dismissText]="'cancel'" [(ngModel)]="value2" (ngModelChange)="onOk2($event)">
     Multiple
   </ListItem>
-  <ListItem Picker [extra]="name3" [arrow]="'horizontal'" [data]="singleArea" [(ngModel)]="value3"
-    (ngModelChange)="onOk3($event)">
-    Single
+
+
+  <ListItem Picker [extra]="name3" [arrow]="'horizontal'" [data]="singleArea" [okText]="'[btn.ok| translate]'"
+    [dismissText]="'btn.cancel | translate'" [(ngModel)]="value3" (ngModelChange)="onOk3($event)">
+
+    {{'msg.select_member' | translate}}
   </ListItem>
 
 </List>
