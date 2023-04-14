@@ -7,7 +7,8 @@
     "home" :  "Trang Chủ",
     "about": "Giới Thiệu",
     "contact": "Liên Hệ",
-    "member": "Thành Viên"
+    "member": "Thành Viên",
+    "product" : "Sản Phẩm"
   },
   "btn":{
     "cancel": "Hủy",

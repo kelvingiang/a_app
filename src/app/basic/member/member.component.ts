@@ -12,7 +12,7 @@ export class MemberComponent implements OnInit {
   name: string = '';
   name2: string = '选择';
   name3: string = '';
-  search: string = '';
+  search: string = this._translateService.instant('msg.select_member');
   value: any = [];
   value2: any = [];
   value3: any = [];

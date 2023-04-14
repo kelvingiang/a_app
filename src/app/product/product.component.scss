@@ -1,0 +1,24 @@
+.product-kind{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    a{
+        padding: 1rem;
+        margin: 1rem;
+        background-color: #ccc;
+        cursor: pointer;
+        :hover{
+            background-color: #333;
+        }
+    }
+}
+
+.product-list{
+    &-item{
+        padding: 1rem;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

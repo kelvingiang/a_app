@@ -20,19 +20,30 @@ import { LanguagesComponent } from './menu/languages/languages.component';
 
 
 import { BasicModule } from './basic/basic.module';
+import { ProductModule } from './product/product.module';
+import  { ShareModule} from './share/share.module';
 // import { LocalizationService } from './service/translation.service-sss';
 
+// import { ProductComponent } from './product/product.component';
+// import { ProductDetailComponent } from './product/product_detail/product_detail.component';
+
+import { StateService } from './service/state.service';
+
 @NgModule({
-  declarations: [AppComponent, 
-    MenuComponent, LanguagesComponent],
+  declarations: [
+    AppComponent, 
+    MenuComponent, 
+    LanguagesComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ShareModule,
     HttpClientModule,
     NgZorroAntdMobileModule,
     BasicModule,
+    ProductModule,
+    AppRoutingModule, // appRouting phai import sau cac module khac
     // đa ngôn ngữ phần thứ hai =======
     TranslateModule.forRoot({
       loader: {
@@ -43,7 +54,7 @@ import { BasicModule } from './basic/basic.module';
     })
   ],
   // providers: [LocalizationService],
-  providers: [],
+  providers: [StateService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

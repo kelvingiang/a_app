@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { MemberComponent } from './member/member.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 import { MemberService } from '../service/member.service';
 
@@ -21,6 +22,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AboutComponent,
     ContactComponent,
     MemberComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,

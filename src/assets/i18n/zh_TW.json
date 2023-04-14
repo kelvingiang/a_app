@@ -8,7 +8,8 @@
     "home": "首頁",
     "about": "簡介",
     "contact": "聯絡",
-    "member": "成員"
+    "member": "成員",
+    "product" : "產品"
   },
   "btn": {
     "cancel": "取消",

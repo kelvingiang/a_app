@@ -1,0 +1,13 @@
+<div class="product-kind">
+   <!--  cách 2 chuyển bằng routerLink có tham số -->
+  <a [routerLink]="['/product_kind', 'en']">en</a>
+  <a [routerLink]="['/product_kind', 'vi']">vi</a>
+</div>
+<div class="product-list">
+  <div class="product-list-item" *ngFor="let item of productList">
+    <div>{{item.name}}</div>
+    <div>{{item.summary}}</div>
+    <!-- cách 3 chuyển trang bằng funciton có tham số -->
+    <div (click)="showMore(item.id)">view</div>
+  </div>
+</div>

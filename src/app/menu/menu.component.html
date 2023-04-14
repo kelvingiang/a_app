@@ -1,6 +1,24 @@
 <div class="main-menu">
-    <a class="nav-link" routerLink='' routerLinkActive="active">{{ 'basic.home' | translate | uppercase}}</a>
-    <a class="nav-link" routerLink='/contact' routerLinkActive="active">{{'basic.contact' | translate | uppercase }}</a>
-    <a class="nav-link" routerLink='/about' routerLinkActive="active">{{'basic.about' | translate | uppercase }}</a>
-    <a class="nav-link" routerLink='/member' routerLinkActive="active">{{'basic.member' | translate| uppercase }}</a>
+    <!-- 
+        tại home phải thêm phần  routerLinkActiveOptions để xóa đi class active khi không dc chọn 
+       ý nghĩa của routerLinkActiveOptions là khi active có quan hệ cha con sẽ bị active luôn cả phần cha
+      khi thêm vào {exact: true} thi phần active của cha sẽ được bỏ qua   
+    cách 1 chuyển trang
+    -->
+
+    <a class="nav-link" routerLink='/' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        {{ 'basic.home' | translate | capitalize}}
+    </a>
+    <a class="nav-link" routerLink='/contact' routerLinkActive="active">
+        {{'basic.contact' | translate | capitalize }}
+    </a>
+    <a class="nav-link" routerLink='/about' routerLinkActive="active">
+        {{'basic.about' | translate | capitalize }}
+    </a>
+    <a class="nav-link" routerLink='/product' routerLinkActive="active">
+        {{'basic.product' | translate | capitalize }}
+    </a>
+    <a class="nav-link" routerLink='/member' routerLinkActive="active">
+        {{'basic.member' | translate| capitalize }}
+    </a>
 </div>

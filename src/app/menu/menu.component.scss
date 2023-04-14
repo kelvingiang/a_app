@@ -3,11 +3,14 @@
     flex-direction: row;
     justify-content: space-around;
 
-        a{
-           flex: 1;
-           text-align: center;
-           padding: 1rem;
-            background-color: #ccc;
-        }
-
+    a {
+        flex: 1;
+        text-align: center;
+        padding: 1rem;
+        background-color: #ccc;
+    }
+    .active {
+        background-color: rgb(104, 2, 2);
+        color: white;
+    }
 }

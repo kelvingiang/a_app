@@ -2,12 +2,9 @@
 <div Button (click)="showPicker()"> {{name !== '' ? name : 'msg.select_member' | translate}} </div>
 
 <ListItem Picker [extra]="search" [arrow]="'horizontal'" [data]="singleArea" okText="{{'btn.ok'| translate}}"
-dismissText="{{'btn.cancel' | translate}}"  [(ngModel)]="search" (ngModelChange)="memberOnOk($event)">
-
-{{'msg.select_member' | translate}}
+  dismissText="{{'btn.cancel' | translate}}" [(ngModel)]="search" (ngModelChange)="memberOnOk($event)">
+  {{'msg.select_member' | translate}}
 </ListItem>
-  
-
 
 <!-- tạo picker trên html  -->
 <div class="member-list">
