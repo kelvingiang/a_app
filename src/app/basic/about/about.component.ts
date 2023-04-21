@@ -8,13 +8,16 @@ import { MemberService } from 'src/app/service/member.service';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
-
-  constructor() {
-    
-     }
+  height: number = document.documentElement.clientHeight;
+  nums: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+  state = {
+    docked: false
+  };
+  constructor() {}
 
   ngOnInit() {}
-
-
-
+  onDockedChange = (event:any) => {
+    console.log('dockedChanged', event);
+    this.state.docked = !this.state.docked;
+  }
 }

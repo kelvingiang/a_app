@@ -8,11 +8,21 @@
     "about": "Giới Thiệu",
     "contact": "Liên Hệ",
     "member": "Thành Viên",
-    "product" : "Sản Phẩm"
+    "product" : "Sản Phẩm",
+    "view" : "Xem",
+    "delete" : "Xoá",
+    "edit" : "Sửa"
   },
   "btn":{
     "cancel": "Hủy",
     "ok": "Xác Nhận",
-    "submit": "Gởi"
+    "submit": "Gởi",
+    "add" : "Thêm mới"
+  },
+  "error":{
+    "no_data": "Không có dữ liệu"
+  },
+  "member":{
+    "person_info" : "Thông Tin Cá Nhân"
   }
 }

@@ -1,0 +1,80 @@
+.api-box {
+    &-item {
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid #ccc;
+        justify-content: space-around;
+        padding: 1rem;
+    }
+}
+.error-box {
+    background-color: rgb(226, 226, 226);
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font : {
+        size: 2rem;
+        weight: bold;
+    }
+
+    width: 100%;
+    height: 100vh;
+}
+
+@keyframes open {
+    from {
+   
+        right: -100%;
+    }
+    to {
+        right: 0;
+       
+    }
+}
+
+@keyframes close {
+    from {
+        right: 0;
+        
+    }
+    to {
+       
+        right: -100%;
+    }
+}
+
+.member-list {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+
+    .add-member-box, .edit-member-box {
+        background-color: #ccc;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        right: -100%;
+        
+    }
+    .add-member-box-open, .edit-member-box-open {
+        right: 0;
+        animation: open 1s linear 1;
+    }
+    .add-member-box-close,.edit-member-box-close {
+        right: -100%;
+        animation: close 0.5s linear 1;
+    }
+}
+
+.btn-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    div {
+        flex: 1;
+        margin: 1rem;
+    }
+}

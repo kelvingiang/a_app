@@ -1,0 +1,92 @@
+<div class="error-box" *ngIf="errorStatus">{{'error.no_data' | translate}}</div>
+
+<Modal [(ngModel)]="this.state.modal1" [transparent]="true" title="{{'member.person_info'| translate}}"
+    [footer]="footer">
+    <div [ngStyle]="{ height: 100, overflow: 'scroll' }">
+        <div>{{member.id}}</div>
+        <div>{{member.name}}</div>
+        <div>{{member.email}}</div>
+        <div>{{member.phone}}</div>
+        <div>{{member.address}}</div>
+    </div>
+</Modal>
+
+<div *ngIf="!errorStatus" class="member-list">
+    <div class="api-box">
+        <div class="api-box-item" *ngFor="let item of dataList, let i= index">
+            <div>{{item.id}}</div>
+            <div (click)="clickView(item.id)">{{item.name}}</div>
+            <div (click)="clickEdit(item.id)">{{'basic.edit'| translate}}</div>
+            <div (click)="clickDelete(item.id)">{{'basic.delete'| translate}}</div>
+        </div>
+    </div>
+    <div>
+        <div Button [type]="'primary'" (click)="open()"> {{'btn.add' | translate | capitalize }} </div>
+    </div>
+    <!-- them moi thanh vien -->
+    <div class="add-member-box"
+        [ngClass]="{'add-member-box-open': showAdd === '1', 'add-member-box-close': showAdd === '2'}">
+        <div>{{memberName}}</div>
+
+        <InputItem [type]="'text'" [clear]="true" [placeholder]="'start from left'" [moneyKeyboardAlign]="'left'"
+            [content]="'name'" [(ngModel)]="memberName">
+
+        </InputItem>
+
+        <InputItem [type]="'text'" [clear]="true" [placeholder]="'start from left'" [moneyKeyboardAlign]="'left'"
+            [content]="'image'" [(ngModel)]="memberImage">
+
+        </InputItem>
+        <InputItem [type]="'text'" [clear]="true" [placeholder]="'start from left'" [moneyKeyboardAlign]="'left'"
+            [content]="'email'" [(ngModel)]="memberEmail">
+
+        </InputItem>
+        <InputItem [type]="'text'" [clear]="true" [placeholder]="'start from left'" [moneyKeyboardAlign]="'left'"
+            [content]="'phone'" [(ngModel)]="memberPhone">
+
+        </InputItem>
+        <InputItem [type]="'text'" [clear]="true" [placeholder]="'start from left'" [moneyKeyboardAlign]="'left'"
+            [content]="'address'" [(ngModel)]="memberAddress">
+
+        </InputItem>
+        <div class="btn-box">
+            <div Button [type]="'primary'" (click)="addItem()"> {{'btn.add' | translate | capitalize }} </div>
+            <div Button [type]="'primary'" (click)="close()"> {{'btn.cancel'| translate | capitalize }} </div>
+        </div>
+    </div>
+
+    <!-- xem va chinh sua thong tin thanh vien -->
+    <div class="edit-member-box"
+        [ngClass]="{'edit-member-box-open': showEdit === '1', 'edit-member-box-close': showEdit === '2'}">
+        <div>{{memberID}}</div>
+
+        <InputItem [type]="'text'" [clear]="true" [placeholder]="'start from left'" [moneyKeyboardAlign]="'left'"
+            [content]="'name'" [(ngModel)]="memberName">
+
+        </InputItem>
+
+        <InputItem [type]="'text'" [clear]="true" [placeholder]="'start from left'" [moneyKeyboardAlign]="'left'"
+            [content]="'image'" [(ngModel)]="memberImage">
+
+        </InputItem>
+        <InputItem [type]="'text'" [clear]="true" [placeholder]="'start from left'" [moneyKeyboardAlign]="'left'"
+            [content]="'email'" [(ngModel)]="memberEmail">
+
+        </InputItem>
+        <InputItem [type]="'text'" [clear]="true" [placeholder]="'start from left'" [moneyKeyboardAlign]="'left'"
+            [content]="'phone'" [(ngModel)]="memberPhone">
+
+        </InputItem>
+        <InputItem [type]="'text'" [clear]="true" [placeholder]="'start from left'" [moneyKeyboardAlign]="'left'"
+            [content]="'address'" [(ngModel)]="memberAddress">
+
+        </InputItem>
+        <div class="btn-box">
+            <div Button [type]="'primary'" (click)="editItem()"> {{'basic.edit' | translate| capitalize }} </div>
+            <div Button [type]="'primary'" (click)="closeEdit()"> {{'btn.cancel' | translate | capitalize }} </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- //======================================== -->

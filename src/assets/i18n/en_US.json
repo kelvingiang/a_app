@@ -8,13 +8,22 @@
     "about": "About",
     "contact": "Contact",
     "member": "Member",
-    "product" : "Product"
+    "product" : "Product",
+    "view" : "View",
+    "delete" : "Delete",
+    "edit" : "Edit"
   },
   "btn":{
     "cancel": "Cancel",
     "ok": "OK",
-    "submit": "Submit"
+    "submit": "Submit",
+    "add" : "Add New"
+  },
+  "error":{
+    "no_data": "Not Data"
+  },
+  "member":{
+    "person_info" : "Person Information"
   }
-
 
 }

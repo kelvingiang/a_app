@@ -1,7 +1,7 @@
 {
   "msg": {
     "hello": "您好!",
-    "select_member" : "選擇會員"
+    "select_member": "選擇會員"
   },
 
   "basic": {
@@ -9,11 +9,21 @@
     "about": "簡介",
     "contact": "聯絡",
     "member": "成員",
-    "product" : "產品"
+    "product": "產品",
+    "view": "顯現",
+    "delete": "刪除",
+    "edit" : "修改"
   },
   "btn": {
     "cancel": "取消",
     "ok": "確定",
-    "submit": "發送"
+    "submit": "發送",
+     "add" : "新增"
+  },
+  "error": {
+    "no_data": "沒有資料"
+  },
+  "member": {
+    "person_info": "個人資料"
   }
 }

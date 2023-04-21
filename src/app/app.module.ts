@@ -22,6 +22,7 @@ import { LanguagesComponent } from './menu/languages/languages.component';
 import { BasicModule } from './basic/basic.module';
 import { ProductModule } from './product/product.module';
 import  { ShareModule} from './share/share.module';
+import { MyHttpModule } from './my-http/my-http.module';
 // import { LocalizationService } from './service/translation.service-sss';
 
 // import { ProductComponent } from './product/product.component';
@@ -43,6 +44,7 @@ import { StateService } from './service/state.service';
     NgZorroAntdMobileModule,
     BasicModule,
     ProductModule,
+    MyHttpModule,
     AppRoutingModule, // appRouting phai import sau cac module khac
     // đa ngôn ngữ phần thứ hai =======
     TranslateModule.forRoot({

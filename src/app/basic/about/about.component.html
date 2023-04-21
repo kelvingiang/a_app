@@ -1,5 +1,35 @@
-<p>
-  about works!
-</p>
+<div>
+  <Navbar [icon]="icon" (onLeftClick)="onDockedChange($event)">Docked in document</Navbar>
+  <Drawer
+    class="my-drawer"
+    [ngStyle]="{ minHeight: this.height + 'px' }"
+    [contentStyle]="{ color: '#A6A6A6', textAlign: 'center', paddingTop: '42px' }"
+    [sidebarStyle]="{ border: '1px solid #ddd' }"
+    [sidebar]="sidebar"
+    [enableDragHandle]="false"
+    [docked]="this.state.docked"
+    [position]="'right'"
+    (onOpenChange)="onDockedChange($event)"
+  >
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla repellat, deserunt harum, quia, delectus provident necessitatibus dolorem ex a nobis aliquid similique distinctio fugiat ipsam quas ab veritatis quae repellendus.
+  </Drawer>
+</div>
 
+<ng-template #icon>
+  <Icon type="ellipsis"></Icon>
+</ng-template>
+
+<ng-template #sidebar>
+  <List>
+    <ListItem [multipleLine]="true" >
+      Category
+    </ListItem>
+    <ListItem
+      *ngFor="let num of this.nums; let i = index"
+      
+    >
+      Category{{ i + 1 }}
+    </ListItem>
+  </List>
+</ng-template>
 
